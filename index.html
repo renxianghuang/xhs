@@ -128,17 +128,25 @@
         if (!localStorage.getItem('visitorCount')) {
             localStorage.setItem('visitorCount', 0);
         }
-        
-        // Increment visitor count
+    
+        // Retrieve the current count, increment it, and store it back
         let visitorCount = parseInt(localStorage.getItem('visitorCount')) + 1;
         localStorage.setItem('visitorCount', visitorCount);
-
-        // Display visitor count
-        document.getElementById('visitor-count').innerText = 'Visitor count: ' + visitorCount;
-
+    
+        // Check that the element exists and display visitor count
+        const visitorElement = document.getElementById('visitor-count');
+        if (visitorElement) {
+            visitorElement.innerText = 'Visitor count: ' + visitorCount;
+        } else {
+            console.warn('Visitor count element not found.');
+        }
+    
         // Display the last updated date
         const lastUpdated = new Date().toLocaleDateString();
-        document.getElementById('last-updated').innerText = 'Last updated: ' + lastUpdated;
+        const lastUpdatedElement = document.getElementById('last-updated');
+        if (lastUpdatedElement) {
+            lastUpdatedElement.innerText = 'Last updated: ' + lastUpdated;
+        }
     </script>
 
 </body>
