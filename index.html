@@ -42,15 +42,14 @@
             text-align: center;
             padding: 10px;
             color: #333;
-            font-size: 1.1rem;    
-
-        td a {
-            color: #007BFF;
-            text-decoration: none;
+            font-size: 1.1rem;
         }
-        td a:hover {
-            text-decoration: underline;
-        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -58,6 +57,7 @@
 
     <header>
         <h1>A-Level Further Math</h1>
+        <div id="visitor-count">Visitor count: 0</div>
     </header>
 
     <!-- Section 1: Further Pure -->
@@ -80,7 +80,7 @@
                     <td><a href="markscheme/2 Proof by induction mark scheme.pdf">Mark Scheme</a></td>
                 </tr>
                 <tr>
-                    <td>Complex numbers</td>
+                    <td>Complex Numbers</td>
                     <td><a href="markscheme/3 Complex number mark scheme.pdf">Mark Scheme</a></td>
                 </tr>
                 <tr>
@@ -114,10 +114,27 @@
                     <td>Hypothesis Testing</td>
                     <td><a href="#">Mark Scheme</a></td>
                 </tr>
-                <!-- Add more rows as needed -->
             </tbody>
         </table>
     </section>
+
+    <footer>
+        <p>Edited by Hunter</p>
+    </footer>
+
+    <script>
+        // Initialize visitor count if not already present
+        if (!localStorage.getItem('visitorCount')) {
+            localStorage.setItem('visitorCount', 0);
+        }
+        
+        // Increment visitor count
+        let visitorCount = parseInt(localStorage.getItem('visitorCount')) + 1;
+        localStorage.setItem('visitorCount', visitorCount);
+
+        // Display visitor count
+        document.getElementById('visitor-count').innerText = 'Visitor count: ' + visitorCount;
+    </script>
 
 </body>
 </html>
