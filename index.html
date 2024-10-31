@@ -38,11 +38,13 @@
         th {
             background-color: #f2f2f2;
         }
-        #visitor-count {
-            text-align: center;
-            padding: 10px;
-            color: #333;
-            font-size: 1.1rem;
+        #visitor-count, #last-updated {
+            background-color: #444;
+            padding: 5px 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border-radius: 4px;
+            font-weight: bold;
         }
         footer {
             background-color: #333;
@@ -119,7 +121,8 @@
     </section>
 
     <footer>
-        <div id="visitor-count">Visitor count: 0</div>        
+        <div id="visitor-count">Visitor count: 0</div>
+        <div id="last-updated">Last updated: </div>
     </footer>
 
     <script>
